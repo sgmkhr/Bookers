@@ -1,0 +1,70 @@
+<% flash.each do |message_type, message| %>
+    <div class="flash_message <% message_type %>"><%= message %></div>
+<% end %>
+
+<h1 class= "headline">Books</h1>
+
+<div class= "contents-area">
+  <div class= "book-lists">
+    <table>
+      <thead>
+        <tr>
+          <th class="book-list-colum">Title</th>
+          <th class="book-list-colum">Body</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |book| %>
+          <tr>
+            <td>
+              <span class="book-list-item"><%= book.title %></span>
+            </td>
+            <td>
+              <span class="book-list-item"><%= book.body %></span>
+            </td>
+            <td>
+              <span class="book-list-item"><%= link_to "Show", book_path(book.id) %></span>
+              <span class="book-list-item"><%= link_to "Edit", edit_book_path(book.id) %></span>
+              <span class="book-list-item"><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="new-book-headline">New book</h2>
+  <% if @book.errors.any? %>
+    <div class="errors-box">
+      <div class="errors-count">
+        <b><%= @book.errors.count %>errors prohibited this book from being saved:</b>
+      </div>
+      <div class="errors-messages">
+        <% @book.errors.full_messages.each do |message| %>
+          <ul>
+            <li>
+              <%= message %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="book-form">
+    <%= form_with model: @book do |f| %>
+      <div class="form-item">
+        <p>Title</p>
+        <%= f.text_field :title %>
+      </div>
+      <div class="form-item">
+        <p>Body</p>
+        <%= f.text_area :body %>
+      </div>
+      <div class="form-item">
+        <%= f.submit "Create Book" %>
+      </div>
+    <% end %>
+  </div>
+</div>

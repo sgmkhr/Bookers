@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.headline {
+  margin: 35px 35px 15px 35px;
+  line-height: 20px;
+}
+
+.contents-area-only {
+  margin: 15px 35px;
+  display: block;
+  padding-left: 35px;
+}
+
+.contents-area {
+  margin: 15px 35px;
+  display: block;
+}
+
+.contents-text {
+  line-height: 50px;
+}
+
+.link-button {
+  line-height: 50px;
+}
+
+.book-lists {
+  display: block;
+  text-align: left;
+}
+
+.book-list-colum {
+  text-align: center;
+}
+
+.book-list-item {
+  padding-right: 10px;
+  line-height: 25px;
+}
+
+.new-book-headline {
+  margin-top: 20px;
+}
+
+.book-form {
+  display: block;
+}
+
+.form-item {
+  margin-top: 15px;
+}
+
+.errors-box {
+  width: 400px;
+  background-color: #EEEEEE;
+  border: solid 2px red;
+}
+
+.errors-count {
+  background-color: #BB0000;
+  color: white;
+  padding: 7px;
+}
+
+.errors-messages {
+  margin: 30px;
+}
+
+.errors-messages ul {
+  padding-left: 70px;
+}
+
+.errors-messages li {
+  list-style: square;
+}
+
+.flash-message {
+  color: green;
+  margin: 35px 35px 15px 35px;
+  line-height: 20px;
+}
